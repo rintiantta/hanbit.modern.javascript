@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            // 문서 객체를 가져오고 설정합니다.
+            var sun = document.getElementById('sun');
+            var earth = document.getElementById('earth');
+            var moon = document.getElementById('moon');
+
+            sun.style.position = 'absolute';
+            earth.style.position = 'absolute';
+            moon.style.position = 'absolute';
+
+            sun.style.left = 250 + 'px';
+            sun.style.top = 200 + 'px';
+        };
+    </script>
+</head>
+<body>
+    <h1 id="sun">@</h1>
+    <h1 id="earth">O</h1>
+    <h1 id="moon">*</h1>
+</body>
+</html>

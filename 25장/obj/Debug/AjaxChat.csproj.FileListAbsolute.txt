@@ -1,0 +1,13 @@
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\bin\AjaxChat.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\bin\AjaxChat.pdb
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\bin\EntityFramework.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\bin\EntityFramework.xml
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\obj\Debug\AjaxChat.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\AjaxChat\AjaxChat\obj\Debug\AjaxChat.pdb
+C:\Users\RintIanTta\Desktop\원고예제\25장\bin\AjaxChat.dll
+C:\Users\RintIanTta\Desktop\원고예제\25장\bin\AjaxChat.pdb
+C:\Users\RintIanTta\Desktop\원고예제\25장\bin\EntityFramework.xml
+C:\Users\RintIanTta\Desktop\원고예제\25장\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Desktop\원고예제\25장\obj\Debug\AjaxChat.dll
+C:\Users\RintIanTta\Desktop\원고예제\25장\obj\Debug\AjaxChat.pdb

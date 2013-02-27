@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="jquery.layout.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+</head>
+<body>
+    <div class="ui-layout-center">
+        <select id="pane_selector">
+            <option value="east">EAST</option>
+            <option value="west">WEST</option>
+            <option value="south">SOUTH</option>
+            <option value="north">NORTH</option>
+        </select>
+        <h1>OPEN & CLOSE</h1>
+        <button>toggle</button>
+        <button>open</button>
+        <button>close</button>
+        <h1>SHOW & HIDE</h1>
+        <button>show</button>
+        <button>hide</button>
+        <h1>SIZE</h1>
+        <button>resizeContent</button>
+        <button>resizeAll</button>
+    </div>
+    <div class="ui-layout-north">North</div>
+    <div class="ui-layout-south">South</div>
+    <div class="ui-layout-east">East</div>
+    <div class="ui-layout-west">West</div>
+</body>
+</html>

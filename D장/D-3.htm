@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (navigator.geolocation) {
+                // 지오로케이션 객체를 사용합니다.
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    // 위치를 가져오는데 성공할 경우
+                    $.each(position.coords, function (key, item) {
+                        $('<h1></h1>').html('●' + key + ': ' + item).appendTo('body');
+                    });
+                }, function (error) {
+                    // 위치를 가져오는데 실패할 경우
+                    alert(error.message);
+                });
+            } else {
+                alert('Geolocation을 지원하지 않는 브라우저입니다.');
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

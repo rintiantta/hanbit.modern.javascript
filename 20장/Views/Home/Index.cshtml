@@ -1,0 +1,123 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <script src="http://www.thomasfrank.se/downloadableJS/xml2json.js"></script>
+    <script>
+        // XMLHttpRequest 객체를 생성하는 함수
+        function createRequest() {
+            var request;
+            try {
+                request = new XMLHttpRequest();
+            } catch (exception) {
+                try {
+                    request = new ActiveXObject('Msxml2.XMLHTTP');
+                } catch (innerException) {
+                    request = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+            }
+            return request;
+        }
+
+        window.onload = function () {
+            // TEXT
+            (function () {
+                // XMLHttpRequest 객체를 생성합니다.
+                var request = createRequest();
+                request.onreadystatechange = function (event) {
+                    if (request.readyState == 4) {
+                        if (request.status == 200) {
+                            document.body.innerHTML += request.responseText;
+                        }
+                    }
+                };
+                request.open('GET', '/Home/MyFirstStringAction', true);
+                request.send();
+            })();
+
+            // JSON
+            (function () {
+                // XMLHttpRequest 객체를 생성합니다.
+                var request = createRequest();
+                request.onreadystatechange = function (event) {
+                    if (request.readyState == 4) {
+                        if (request.status == 200) {
+                            var json = eval('(' + request.responseText + ')');
+                            var willIn = '';
+                            for (var i in json) {
+                                willIn += '<h1>' + i + ':' + json[i] + '</h1>';
+                            }
+                            // 출력합니다.
+                            document.body.innerHTML += willIn;
+                        }
+                    }
+                };
+                request.open('GET', '/Home/MyFirstJSONAction', true);
+                request.send();
+            })();
+
+            // XML - NORMAL
+            (function () {
+                // XMLHttpRequest 객체를 생성합니다.
+                var request = createRequest();
+                // onreadystatechange 이벤트 연결
+                request.onreadystatechange = function (event) {
+                    if (request.readyState == 4) {
+                        if (request.status == 200) {
+                            // 변수를 선언합니다.
+                            var xml = request.responseXML;
+                            // XML에서 각각의 요소를 뽑아냅니다.
+                            var people = xml.getElementsByTagName('person');
+                            var output = '';
+                            for (var i = 0; i < people.length; i++) {
+                                try {
+                                    output += people[i].childNodes[1].childNodes[0].nodeValue + '\t';
+                                    output += people[i].childNodes[3].childNodes[0].nodeValue + '\t';
+                                    output += people[i].childNodes[5].childNodes[0].nodeValue + '\n';
+                                } catch (e) {
+                                    output += people[i].childNodes[0].childNodes[0].nodeValue + '\t';
+                                    output += people[i].childNodes[1].childNodes[0].nodeValue + '\t';
+                                    output += people[i].childNodes[2].childNodes[0].nodeValue + '\n';
+                                }
+                            }
+                            alert(output);
+                        }
+                    }
+                };
+                // XMLHttpRequest 요청
+                request.open('GET', '/Home/MyFirstXMLAction', true);
+                request.send();
+            })();
+
+            // XML - To JSON
+            (function () {
+                // XMLHttpRequest 객체를 생성합니다.
+                var request = createRequest();
+                // onreadystatechange 이벤트 연결
+                request.onreadystatechange = function (event) {
+                    if (request.readyState == 4) {
+                        if (request.status == 200) {
+                            // XML을 JSON으로 변경합니다.
+                            var json = xml2json.parser(request.responseText);
+                            // 이용합니다.
+                            for (var i in json['people']['person']) {
+                                var name = json['people']['person'][i].name;
+                                var gender = json['people']['person'][i].gender;
+                                var part = json['people']['person'][i].part;
+                            }
+                        }
+                    }
+                };
+                // XMLHttpRequest 요청
+                request.open('GET', '/Home/MyFirstXMLAction', true);
+                request.send();
+            })();
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+

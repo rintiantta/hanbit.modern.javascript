@@ -1,0 +1,13 @@
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\bin\AJAXProductManage.dll
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\bin\AJAXProductManage.pdb
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\bin\EntityFramework.dll
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\bin\EntityFramework.xml
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\obj\Debug\AJAXProductManage.dll
+C:\Users\RintIanTta\Documents\Visual Studio 2010\AJAXProductManage\AJAXProductManage\obj\Debug\AJAXProductManage.pdb
+C:\Users\RintIanTta\Desktop\원고예제\23장\bin\AJAXProductManage.dll
+C:\Users\RintIanTta\Desktop\원고예제\23장\bin\AJAXProductManage.pdb
+C:\Users\RintIanTta\Desktop\원고예제\23장\bin\EntityFramework.xml
+C:\Users\RintIanTta\Desktop\원고예제\23장\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Desktop\원고예제\23장\obj\Debug\AJAXProductManage.dll
+C:\Users\RintIanTta\Desktop\원고예제\23장\obj\Debug\AJAXProductManage.pdb

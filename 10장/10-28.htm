@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 윈도우가 로드될 때
+        window.attachEvent('onload', function () {
+            // myHeader를 가져옵니다.
+            var header = document.getElementById('myHeader');
+            // 이벤트를 연결합니다.
+            header.attachEvent('onclick', function () { alert('클릭'); });
+            header.attachEvent('onclick', function () { alert('클릭'); });
+            header.attachEvent('onclick', function () { alert('클릭'); });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="myHeader">Click</h1>
+</body>
+</html>

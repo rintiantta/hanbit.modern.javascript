@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       * { margin:0px; padding:0px; }
+        body { background-color:#525252; }
+    
+        .item  {
+            width:150px;
+            margin: 10px;    
+            background-color:White;
+            border-radius:4px; 
+            float: left;
+            box-shadow:5px 5px 10px Black;
+        }
+    
+        .big { width: 320px; }
+        .big > img { width: 320px; }
+    
+        .item > .bottom {
+            padding-left:10px; padding-right:10px;
+        
+            position:relative;
+            bottom:18px;
+        }
+    
+        .item > .bottom > img  {
+            position:relative;
+            left:21px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="jquery.masonry.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // masonry 플러그인을 적용합니다.
+            $('#masonry_container').masonry({
+                itemSelector: '.item',
+                columnWidth: 170,
+                isAnimated: true
+            });
+
+            // 이벤트를 연결합니다.
+            $('.item').live('click', function () {
+                // 클릭한 대상을 제거합니다.
+                $('#masonry_container').masonry('remove', $(this));
+                $('#masonry_container').masonry('reload');
+            });
+
+            $('#add_button').click(function () {
+                // 두 배로 복제합니다.
+                var $item = $('#masonry_container').children().clone();
+                $('#masonry_container').append($item).masonry('reload');
+            });
+        });
+    </script>
+</head>
+<body>
+   <div id="add_button">
+        <img src="CJ.gif "/>
+    </div>
+    <div id="masonry_container">
+        <div class="item">
+            <img src="cj3.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj2.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>consectetur adipiscing elit</p>
+            </div>
+        </div>
+        <div class="item big">
+            <img src="cj1.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>Vivamus tempus molestie sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj4.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>et mollis diam pretium quis</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj5.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>Quisque imperdiet, libero vitae</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj6.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>dignissim vestibulum, neque dui pharetra odio</p>
+            </div>
+        </div>
+        <div class="item big">
+            <img src="cj7.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>dignissim, sem justo dictum mauris, non fringilla urna</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj8.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>ligula tortor fringilla purus, varius faucibus mauris sem eget diam.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj9.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>Lorem ipsum</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj10.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>vel mauris. Donec vitae ipsum at risus</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj11.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>Nulla posuere, neque vel bibendum dignissim, sem justo dictum mauris,</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj12.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>consectetur porta id at diam. Maecenas malesuada, tortor et fringilla consequat,</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cj13.jpg"/>
+            <div class="bottom">
+                <img src="top.png" />
+                <p>Praesent nec faucibus dui. Vestibulum ante ipsum primis </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).bind('touchstart', function (e) {
+                var event = e.originalEvent;
+                $('#output').html('<h1>' + event.touches[0].screenX + '</h1>');
+                e.preventDefault();
+            });
+
+            $(document).bind('touchmove', function (e) {
+                var event = e.originalEvent;
+                $('#output').html('<h1>' + event.touches[0].screenX + '</h1>');
+                e.preventDefault();
+            });
+
+            $(document).bind('touchend', function (e) {
+                var event = e.originalEvent;
+                $('#output').html('<h1>' + event.touches[0].screenX + '</h1>');
+                e.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

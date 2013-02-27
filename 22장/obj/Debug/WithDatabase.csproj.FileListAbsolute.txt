@@ -1,0 +1,7 @@
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\bin\WithDatabase.dll
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\bin\WithDatabase.pdb
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\bin\EntityFramework.dll
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\bin\EntityFramework.xml
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\obj\Debug\WithDatabase.dll
+C:\Users\RintIanTta\Documents\Visual Studio 2010\WithDatabase\WithDatabase\obj\Debug\WithDatabase.pdb

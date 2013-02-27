@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="Stylesheet" href="../../Content/jquery.fancybox-1.3.4.css" />
+    <style>
+        * { margin:0px; padding:0px; }
+        #page_selector { overflow:hidden; }
+        #page_selector > h1 {
+            padding-right:15px;
+            float:left;
+        }
+        #output > a { text-decoration:none; }
+        #output div  {
+            margin:10px;
+            padding:10px;
+            
+            border-width:3px;
+            border-style:solid;
+            border-color:#9F9F9F;
+            border-radius:10px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 페이지당 내용물의 수를 정의합니다.
+            var count = 5;
+
+            // 페이지를 나눕니다.
+            $.get('/Home/GetRSSCount', function (data) {
+                // 숫자로 바꿉니다.
+                var perPage = Math.ceil(Number(data) / count);
+
+                // 페이지를 만듭니다.
+                for (var i = 0; i < perPage; i++) {
+                    $('<h1></h1>').html(i).appendTo('#page_selector');
+                }
+            });
+
+            // 이벤트를 연결합니다.
+            $('#page_selector > h1').live('click', function () {
+                // 클릭한 페이지를 가져옵니다.
+                var start = $(this).html();
+
+                // 데이터를 추가합니다.
+                $.getJSON('/Home/GetRSS', {
+                    start: start,
+                    count: count
+                }, function (data) {
+                    // #output의 내용을 지웁니다.
+                    $('#output').empty();
+                    // #output에 내용을 추가합니다.
+                    $.each(data, function (index, item) {
+                        var output = '';
+                        output += '<a href="' + item.link + '">';
+                        output += '<div link>';
+                        output += ' <h1>' + item.title + '</h1>';
+                        output += ' <h2>' + item.author + '</h2>';
+                        output += ' <p>' + item.description + '</p>';
+                        output += ' <p>' + item.pubDate + '</p>';
+                        output += '</div>';
+                        output += '</a>';
+                        $('#output').append(output);
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="page_selector"></div>
+    <hr />
+    <div id="output">
+        
+    </div>
+</body>
+</html>

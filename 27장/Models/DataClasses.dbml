@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database" Class="DataClassesDB" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Books" Member="Books">
+    <Type Name="Books">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isbn" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Page" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

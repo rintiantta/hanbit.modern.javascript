@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 생성자 함수를 선언합니다.
+        function Rectangle(w, h) {
+            var width = w;
+            var height = h;
+
+            this.getWidth = function () { return width; };
+            this.getHeight = function () { return height; };
+            this.setWidth = function (value) {
+                if (value < 0) {
+                    throw '길이는 음수일 수 없습니다.';
+                } else {
+                    width = value;
+                }
+            };
+            this.setHeight = function (value) {
+                if (value < 0) {
+                    throw '길이는 음수일 수 없습니다.';
+                } else {
+                    height = value;
+                }
+            };
+        }
+
+        Rectangle.prototype.getArea = function () {
+            return this.getWidth() * this.getHeight();
+        };
+    </script>
+    <script>
+        // 생성자 함수를 선언합니다.
+        function Square(length) {
+            Rectangle.call(this, length, length);
+        }
+        Square.prototype = new Rectangle();
+        Square.prototype.constructor = Square;
+
+        // 변수를 선언합니다.
+        var square = new Square(5);
+
+        // 출력합니다.
+        alert(square.getArea());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

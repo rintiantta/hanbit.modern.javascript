@@ -1,0 +1,13 @@
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\bin\RSSParser.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\bin\RSSParser.pdb
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\bin\EntityFramework.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\bin\EntityFramework.xml
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\obj\Debug\RSSParser.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\RSSParser\RSSParser\obj\Debug\RSSParser.pdb
+C:\Users\RintIanTta\Desktop\원고예제\24장\3절\bin\RSSParser.dll
+C:\Users\RintIanTta\Desktop\원고예제\24장\3절\bin\RSSParser.pdb
+C:\Users\RintIanTta\Desktop\원고예제\24장\3절\bin\EntityFramework.xml
+C:\Users\RintIanTta\Desktop\원고예제\24장\3절\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Desktop\원고예제\24장\3절\obj\Debug\RSSParser.dll
+C:\Users\RintIanTta\Desktop\원고예제\24장\3절\obj\Debug\RSSParser.pdb

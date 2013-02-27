@@ -1,0 +1,13 @@
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\bin\HelloMVC.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\bin\HelloMVC.pdb
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\bin\EntityFramework.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\bin\EntityFramework.xml
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\obj\Debug\HelloMVC.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\HelloMVC\HelloMVC\obj\Debug\HelloMVC.pdb
+C:\Users\RintIanTta\Desktop\원고예제\19장\bin\HelloMVC.dll
+C:\Users\RintIanTta\Desktop\원고예제\19장\bin\HelloMVC.pdb
+C:\Users\RintIanTta\Desktop\원고예제\19장\bin\EntityFramework.xml
+C:\Users\RintIanTta\Desktop\원고예제\19장\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Desktop\원고예제\19장\obj\Debug\HelloMVC.dll
+C:\Users\RintIanTta\Desktop\원고예제\19장\obj\Debug\HelloMVC.pdb

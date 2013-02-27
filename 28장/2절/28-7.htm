@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="css/jquery.lightbox-0.5.css" />
+    <style>
+        
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="js/jquery.lightbox-0.5.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a[rel=lightbox]').lightBox({
+                overlayBgColor: 'Purple',
+                keyToPrev: 'a',
+                keyToNext: 's',
+                keyToClose: 'd'
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery LightBox</h1>
+    <a rel="lightbox" href="Chrysanthemum.jpg">Image-1</a>
+    <a rel="lightbox" href="Desert.jpg">Image-2</a>
+    <a rel="lightbox" href="Hydrangeas.jpg">Image-3</a>
+    <a rel="lightbox" href="Jellyfish.jpg">Image-4</a>
+    <a rel="lightbox" href="Koala.jpg">Image-5</a>
+    <a rel="lightbox" href="Lighthouse.jpg">Image-6</a>
+    <a rel="lightbox" href="Penguins.jpg">Image-7</a>
+    <a rel="lightbox" href="Tulips.jpg">Image-8</a>
+</body>
+</html>

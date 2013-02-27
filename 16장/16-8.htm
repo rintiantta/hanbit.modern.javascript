@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .reverse {
+            background: Black;
+            color: White;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').hover(function () {
+                $(this).addClass('reverse');
+            }, function () {
+                $(this).removeClass('reverse');
+            });
+            // 이벤트를 연결합니다.
+            $('h1').toggle(function () {
+                // 문자열의 앞에 별을 추가합니다.
+                $(this).html(function (index, html) {
+                    return '★' + html;
+                });
+            }, function () {
+                // 문자열의 뒤에 별을 추가합니다.
+                $(this).html(function (index, html) {
+                    return html + '★';
+                });
+            }, function () {
+                // 문자열의 별을 제거합니다.
+                $(this).html(function (index, html) {
+                    return html.substring(1, html.length - 1);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+</body>
+</html>

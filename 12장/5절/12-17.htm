@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=등록키"></script>
+    <script>
+        window.onload = function () {
+            // 지도를 생성합니다.
+            var map = new nhn.api.map.Map('map');
+
+            // 줌 컨트롤을 생성합니다.
+            var mapZoom = new nhn.api.map.ZoomControl();
+            mapZoom.setPosition({ left: 20, top: 20 });
+
+            // 지도 타입 버튼을 생성합니다.
+            var mapType = new nhn.api.map.MapTypeBtn();
+            mapType.setPosition({ left: 50, top: 20 });
+
+            // 실시간 교통 지도 버튼을 생성합니다.
+            var mapTraffic = new nhn.api.map.TrafficMapBtn();
+            mapTraffic.setPosition({ left: 125, top: 20 });
+
+            // 테마 지도 버튼을 생성합니다.
+            var mapTheme = new nhn.api.map.ThemeMapBtn();
+            mapTheme.setPosition({ left: 200, top: 20 });
+
+            // 자전거 범례를 생성합니다.
+            var mapBicycleGuide = new nhn.api.map.BicycleGuide();
+
+            // 교통 범례를 생성합니다.
+            var mapTrafficGuide = new nhn.api.map.TrafficGuide();
+
+            // 지도에 컨트롤을 추가합니다.
+            map.addControl(mapZoom);
+            map.addControl(mapType);
+            map.addControl(mapTraffic);
+            map.addControl(mapTheme);
+            map.addControl(mapBicycleGuide);
+            map.addControl(mapTrafficGuide);
+        };
+    </script>
+</head>
+<body>
+    <div id="map" style="width:700px; height:450px;"></div>
+</body>
+</html>

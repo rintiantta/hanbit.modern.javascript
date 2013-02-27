@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link href="../../Content/jquery-ui-1.8.14.custom.css" rel="Stylesheet"/>
+    <link href="../../Content/ui.jqgrid.css"  rel="Stylesheet"/>
+    
+    <script src="http://code.jquery.com/jquery-1.6.1.js"></script>
+    <script src="../../Scripts/jquery.jqGrid.js"></script>
+<script>
+    $(document).ready(function () {
+        // 변수를 선언합니다.
+        var customDialog = {
+            onclickSubmit: function (params) {
+                var selectedRow = $("#grid").getGridParam("selrow");
+                rowData = $("#grid").getRowData(selectedRow);
+                return { Id: rowData.Id };
+            }
+        };
+
+        // 그리드를 생성합니다.
+        $('#grid').jqGrid({
+            url: '/Home/GetBooks',
+            editurl: '/Home/EditBooks',
+            pager: '#pager',
+            caption: 'Books',
+            height: '100%',
+            rowNum: 10,
+            rowList: [10, 20, 30],
+            colNames: ['ID', 'Name', 'Author', 'Publisher', 'ISBN', 'Page'],
+            colModel: [
+                { name: 'Id', index: 'Id', width: 30 },
+                { name: 'Name', width: 200, editable: true, edittype: 'text' },
+                { name: 'Author', width: 90, editable: true, edittype: 'textarea' },
+                { name: 'Publisher', width: 80, editable: true, edittype: 'password' },
+                { name: 'Isbn', width: 80, editable: true, edittype: 'checkbox' },
+                { name: 'Page', width: 40, editable: true, edittype: 'file' },
+            ],
+            ondblClickRow: function (rowid, row, col, event) {
+                alert(e);
+                $('#grid').editGridRow(rowid);
+            }
+        }).navGrid('#pager', {
+            search: true,
+            edit: true,
+            add: true,
+            del: true
+        }, customDialog, customDialog, customDialog);
+    });
+</script>
+</head>
+<body>
+    <table id="grid"></table> 
+    <div id="pager"></div> 
+</body>
+</html>

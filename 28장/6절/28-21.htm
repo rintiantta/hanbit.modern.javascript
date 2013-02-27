@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="fancybox/jquery.fancybox-1.3.4.css"/>
+    <style>
+        
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="fancybox/jquery.easing-1.3.pack.js"></script>
+    <script src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#fancybox').fancybox().click(function () {
+                // 3초 후에 함수를 실행합니다.
+                setTimeout(function () {
+                    // fancybox를 닫습니다.
+                    $.fancybox.close();
+                }, 3000);
+            }).trigger('click');
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery FancyBox</h1>
+    <a id="fancybox" href="#dialog">Dialog with FancyBox</a>
+
+    <!-- 다이얼로그 -->
+    <div id="dialogs" style="display:none;">
+        <div id="dialog">
+            <h1>Auto OPEN FancyBox</h1>
+            <p>이 라이트박스는 3초 후에 자동으로 사라집니다.</p>
+        </div>
+    </div>
+</body>
+</html>

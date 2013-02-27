@@ -1,0 +1,13 @@
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\bin\Uplodify.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\bin\Uplodify.pdb
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\bin\EntityFramework.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\bin\EntityFramework.xml
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\obj\Debug\Uplodify.dll
+c:\users\rintiantta\documents\visual studio 2010\Projects\Uplodify\Uplodify\obj\Debug\Uplodify.pdb
+C:\Users\RintIanTta\Desktop\원고예제\30장\3절\bin\Uplodify.dll
+C:\Users\RintIanTta\Desktop\원고예제\30장\3절\bin\Uplodify.pdb
+C:\Users\RintIanTta\Desktop\원고예제\30장\3절\bin\EntityFramework.xml
+C:\Users\RintIanTta\Desktop\원고예제\30장\3절\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\RintIanTta\Desktop\원고예제\30장\3절\obj\Debug\Uplodify.dll
+C:\Users\RintIanTta\Desktop\원고예제\30장\3절\obj\Debug\Uplodify.pdb

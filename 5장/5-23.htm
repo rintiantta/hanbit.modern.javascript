@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function outerFunction(name) {
+            var output = 'Hello ' + name + '.. !';
+            return function () {
+                alert(output);
+            };
+        }
+        outerFunction('RintIanTta')();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

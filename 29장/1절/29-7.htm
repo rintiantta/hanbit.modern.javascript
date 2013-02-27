@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .ui-layout-center { background:Yellow; }
+        .ui-layout-east { background:Blue; }
+        .ui-layout-west { background:White; }
+        .ui-layout-south { background:Red; }
+        .ui-layout-north { background:Black; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="jquery.layout.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var $layout = $('body').layout();
+            $layout.close('north');
+        });
+    </script>
+</head>
+<body>
+    <div class="ui-layout-center">CENTER</div>
+    <div class="ui-layout-east">East</div>
+    <div class="ui-layout-west">West</div>
+    <div class="ui-layout-south">South</div>
+    <div class="ui-layout-north">North</div>
+</body>
+</html>

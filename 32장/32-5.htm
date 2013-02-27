@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        jQuery.fn.myPluginMethod = function (options) {
+            $(this).css('color', 'White');
+            $(this).css('background', 'Black');
+        };
+
+        $(document).ready(function () {
+            // 플러그인을 사용합니다.
+            $('h1').myCustomMethod();
+        });
+    </script>
+</head>
+<body>
+    <h1>Header A</h1>
+    <h1>Header B</h1>
+</body>
+</html>

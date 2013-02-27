@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BBA8B61-8384-4C1D-9998-F3D502DA9417}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HellojQGrid</RootNamespace>
+    <AssemblyName>HellojQGrid</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\Dynamic.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.14.custom.css" />
+    <Content Include="Content\ui.jqgrid.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-ui-1.8.14.custom.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\js\grid.base.js" />
+    <Content Include="Scripts\js\grid.celledit.js" />
+    <Content Include="Scripts\js\grid.common.js" />
+    <Content Include="Scripts\js\grid.custom.js" />
+    <Content Include="Scripts\js\grid.filter.js" />
+    <Content Include="Scripts\js\grid.formedit.js" />
+    <Content Include="Scripts\js\grid.grouping.js" />
+    <Content Include="Scripts\js\grid.import.js" />
+    <Content Include="Scripts\js\grid.inlinedit.js" />
+    <Content Include="Scripts\js\grid.jqueryui.js" />
+    <Content Include="Scripts\js\grid.subgrid.js" />
+    <Content Include="Scripts\js\grid.tbltogrid.js" />
+    <Content Include="Scripts\js\grid.treegrid.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-da.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-mne.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\js\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\js\jqDnR.js" />
+    <Content Include="Scripts\js\jqModal.js" />
+    <Content Include="Scripts\js\jquery.fmatter.js" />
+    <Content Include="Scripts\js\JsonXml.js" />
+    <Content Include="Scripts\plugins\grid.addons.js" />
+    <Content Include="Scripts\plugins\grid.postext.js" />
+    <Content Include="Scripts\plugins\grid.setcolumns.js" />
+    <Content Include="Scripts\plugins\jquery.contextmenu.js" />
+    <Content Include="Scripts\plugins\jquery.searchFilter.js" />
+    <Content Include="Scripts\plugins\jquery.tablednd.js" />
+    <Content Include="Scripts\plugins\searchFilter.css" />
+    <Content Include="Scripts\plugins\ui.multiselect.css" />
+    <Content Include="Scripts\plugins\ui.multiselect.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49606</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

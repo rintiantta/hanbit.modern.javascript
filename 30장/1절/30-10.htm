@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        label.rintiantta { color: Red; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 메시지를 정의합니다.
+            $.extend(jQuery.validator.messages, {
+                required: '필수 입력 사항입니다.',
+                minlength: '{0}글자 이상 입력해주세요.',
+                email: '이메일 형식에 맞게 입력해주세요.',
+                url: 'URL 형식에 맞게 입력해주세요.'
+            });
+
+            // Validate 플러그인을 적용합니다.
+            $('#my_form').validate({
+                //errorClass: 'rintiantta',
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    email: 'required email',
+                    homepage: {
+                        required: true,
+                        url: true
+                    }
+                },
+                submitHandler: function (form) {
+                    var serialize = $(form).serialize();
+                    alert(serialize);
+                },
+                success: function (label) {
+
+                },
+                errorPlacement: function (error, element) {
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="my_form">
+        <table>
+            <tr>
+                <td><label>이름</label></td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+                <td><label>이메일</label></td>
+                <td><input type="text" name="email" /></td>
+            </tr>
+            <tr>
+                <td><label>홈페이지</label></td>
+                <td><input type="text" name="homepage" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="SEND"/>
+    </form>
+</body>
+</html>

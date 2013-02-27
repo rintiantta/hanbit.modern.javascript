@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            function getLocation(position) {
+
+            }
+
+            if (navigator.geolocation) {
+                // 지오로케이션 객체를 사용합니다.
+                navigator.geolocation.getCurrentPosition(getLocation, function (error) {
+                    // 위치를 가져오는데 실패할 경우
+                    alert(error.message);
+                });
+            } else {
+                alert('Geolocation을 지원하지 않는 브라우저입니다.');
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

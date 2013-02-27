@@ -1,0 +1,87 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <style>
+        * { margin:0px; padding:0px; }
+        #wrap { overflow:hidden; }
+        
+        .item 
+        {
+            margin:5px; padding:5px;
+            width:300px; height:150px;
+            float:left;
+            
+            border-width:3px;
+            border-style:solid;
+            border-color:Gray;
+            border-radius:10px;
+        }
+    
+        ul { overflow:hidden; }
+        li { float:left; list-style:none; padding:10px; cursor:pointer; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.6.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 내부 함수 선언
+            function getItems(nowPage, itemsPerPage) {
+                $.getJSON('/Home/GetPagingProductList', {
+                    nowPage: nowPage,
+                    perPage: itemsPerPage
+                }, function (data) {
+                    $(data).each(function (index, item) {
+                        // 변수를 선언합니다.
+                        var imageURL = '/Home/GetProductImage/' + item.ProductID;
+                        var willOut = '';
+                        willOut += '<div class="item">';
+                        willOut += '    <h3>' + item.ProductID + ' : ' + item.Name + '</h3>';
+                        willOut += '    <img src="' + imageURL + '"/>';
+                        willOut += '    <p>' + 'productNumber: ' + item.ProductNumber + '</p>';
+                        willOut += '    <p>' + 'color: ' + item.Color + '</p>';
+                        willOut += '    <p>' + 'standardCost: ' + item.StandardCost + '</p>';
+                        willOut += '</div>';
+
+                        // 문서 객체에 추가합니다.
+                        $('#wrap').append(willOut);
+                    });
+                });
+            }
+
+            // 페이지와 관련된 정보를 가지는 변수
+            var itemsPerPage = 12;
+
+            // 페이지 버튼 추가
+            $.post('/Home/GetTotalProductCount', function (data) {
+                var totalItem = Number(data);
+                var totalPage = Math.ceil(totalItem / itemsPerPage);
+                for (var i = 0; i < totalPage; i++) {
+                    var $add = $('<li/>').html(i).attr('data-page', i);
+                    $('.paging_button').append($add);
+                }
+            });
+
+            // 페이지 버튼 이벤트 연결
+            $('.paging_button li').live('click', function () {
+                // 원래 있던 내용 제거
+                $('#wrap').empty();
+
+                // 새로 내용을 넣습니다.
+                var nowPage = $(this).attr('data-page');
+                getItems(nowPage, itemsPerPage);
+            });
+
+            // 0으로 초기 페이지 설정
+            getItems(0, itemsPerPage);
+        });
+    </script>
+</head>
+<body>
+    <ul class="paging_button"></ul>
+    <div id="wrap">
+        
+    </div>
+    <ul class="paging_button"></ul>
+</body>
+</html>

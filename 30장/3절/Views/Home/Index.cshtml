@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <link rel="Stylesheet" href="../../Content/uploadify.css" />
+    <script src="http://code.jquery.com/jquery-1.6.1.js"></script>
+    <script src="../../Scripts/jquery.uploadify.v2.1.4.js"></script>
+    <script src="../../Scripts/swfobject.js"></script>
+    <script>
+$(document).ready(function () {
+    $('#uplodify').uploadify({
+        cancelImg: '/Content/cancel.png',
+        uploader: '/Content/uploadify.swf',
+        script: '/Home/UploadFile',
+
+        sizeLimit: 2097152,
+
+        multi: true,
+        auto: false
+    });
+
+    $('#myForm').submit(function (event) {
+        $('#uplodify').uploadifyUpload();
+        event.preventDefault();
+    });
+});
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <input type="file" name="file" id="uplodify" />
+        <input type="submit" />
+    </form>
+</body>
+</html>

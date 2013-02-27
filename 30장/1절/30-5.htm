@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#my_form').validate({
+                rules: {
+
+                },
+                messages: {
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="my_form">
+        <table>
+            <tr>
+                <td><label>이름</label></td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+                <td><label>이메일</label></td>
+                <td><input type="text" name="email" /></td>
+            </tr>
+            <tr>
+                <td><label>홈페이지</label></td>
+                <td><input type="text" name="homepage" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="SEND"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" />
+    <style>
+        body { font-size:62.5% }
+        h1 { text-align:center; }
+        input[type=text], label {
+            margin-bottom:12px; padding: .4em;
+            width:95%;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dialog').dialog({
+                buttons: {
+                    submit: function () { },
+                    reset: function () { },
+                    cancel: function () { }
+                },
+                modal: true
+            });
+            $('#event_date').datepicker();
+        });
+    </script>
+</head>
+<body>
+    <div id="dialog" title="jQuery UI dialog">
+        <h1>Hello jQUery UI .. !</h1>
+        <label for="event_name">일정 이름</label>
+        <input id="event_name" type="text"/>
+        <label for="event_date">날짜</label>
+        <input id="event_date" type="text"/>
+    </div>
+</body>
+</html>

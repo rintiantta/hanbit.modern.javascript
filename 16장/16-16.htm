@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            // 이벤트를 연결합니다.
+            $(canvas).toggle(function (event) {
+                // 위치를 얻어냅니다.
+                var position = $(this).offset();
+                var x = event.pageX - position.left;
+                var y = event.pageY - position.top;
+            }, function (event) {
+                // 위치를 얻어냅니다.
+                var position = $(this).offset();
+                var x = event.pageX - position.left;
+                var y = event.pageY - position.top;
+            });
+        });
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="300">
+
+    </canvas>
+</body>
+</html>

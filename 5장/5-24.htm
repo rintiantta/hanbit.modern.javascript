@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 함수를 선언합니다.
+        function outerFunction(name) {
+            var output = 'Hello ' + name + '.. !';
+            return function () {
+                return output;
+            };
+        }
+
+        // 변수를 선언합니다.
+        var first = outerFunction('JavaScript');
+        var second = outerFunction('jQuery');
+
+        // 출력합니다.
+        alert(first());
+        alert(second());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

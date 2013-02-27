@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { margin:0px; padding:0px; }
+        div  {
+            margin:10px; padding:10px;
+            border:3px Solid Black;
+            border-radius:10px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div').on('click', function () {
+                $(this).clone().appendTo('body');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>$(selector).on()</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+    <style>
+        
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).bind('pagecreate', function () {
+            $('a').click(function () {
+                // 변수를 선언합니다.
+                var href = $(this).attr('href');
+
+                // 페이지를 이동합니다.
+                $.mobile.loadPage(href);
+
+                // 기본 이벤트를 제거합니다.
+                returnfalse;
+            });
+        });
+    </script>
+    <script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>MOBILE</h1>
+        </div>
+        <div data-role="content">
+        <h1>Here is First PAGE</h1>
+            <a data-role="button" href="31-48.htm">Move To Second PAGE</a>
+        </div>
+    </div>
+</body>
+</html>

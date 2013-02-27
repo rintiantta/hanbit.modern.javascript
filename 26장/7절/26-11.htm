@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" />
+    <style>
+        body { font-size:62.5% }
+        h1 { text-align:center; }
+        input[type=text], label {
+            margin-bottom:12px; padding: .4em;
+            width:95%;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('#open_button').click(function () {
+                $('#dialog').dialog('open');
+            });
+
+            $('#dialog').bind('dialogcreate', function () {
+                alert('다이얼로그를 생성했습니다.');
+            });
+
+            // jQuery UI Dialog 플러그인
+            $('#dialog').dialog({
+                open: function () {
+                    alert('DIALOG OPEN');
+                },
+                autoOpen: false,
+                buttons: {
+                    submit: function () {
+                        // 변수를 선언합니다.
+                        var eventName = $('#event_name').val();
+                        var eventDate = $('#event_date').val();
+                        // 출력합니다.
+                        $('<h1></h1>').html(eventName + ' : ' + eventDate).appendTo('#output');
+                        // 다이얼로그를 닫습니다.
+                        $('#event_name').val('');
+                        $('#event_date').val('');
+                        $('#dialog').dialog('close');
+                    },
+                    reset: function () {
+                        $('#event_name').val('');
+                        $('#event_date').val('');
+                    },
+                    cancel: function () {
+                        $('#event_name').val('');
+                        $('#event_date').val('');
+                        $('#dialog').dialog('close');
+                    }
+                },
+                modal: true
+            });
+            // jQuery UI DatePicker 플러그인
+            $('#event_date').datepicker({
+                dateFormat: 'yy년 mm월 dd일',
+                numberOfMonths: 3
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="open_button">일정 생성</h1>
+    <hr/>
+    <div id="output"></div>
+    <!-- 다이얼로그 -->
+    <div id="dialog" title="jQuery UI dialog">
+        <h1>Hello jQUery UI .. !</h1>
+        <label for="event_name">일정 이름</label>
+        <input id="event_name" type="text"/>
+        <label for="event_date">날짜</label>
+        <input id="event_date" type="text"/>
+    </div>
+</body>
+</html>

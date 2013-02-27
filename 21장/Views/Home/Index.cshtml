@@ -1,0 +1,50 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function () {
+            // TEXT
+            $.ajax('/Home/MyFirstStringAction', {
+                success: function (data) {
+                    $('body').append(data);
+                }
+            });
+
+            // TEXT With PARAMETER
+            $.ajax({
+                url: '/Home/ActionWithData',
+                data: { name: 'rintiantta', age: 21 },
+                success: function (data) {
+                    $('body').append(data);
+                }
+            });
+
+            // JSON
+            $.getJSON('/Home/MyFirstJsonAction', function (data) {
+                $.each(data, function (key, value) {
+                    $('body').append('<h1>' + key + ' : ' + value + '</h1>');
+                });
+            });
+
+            // XML
+            $.ajax('/Home/MyFirstXMLAction', {
+                success: function (data) {
+                    $(data).find('person').each(function () {
+                        var name = '<li>' + $(this).find('name').text() + '</li>';
+                        var gender = '<li>' + $(this).find('gender').text() + '</li>';
+                        var part = '<li>' + $(this).find('part').text() + '</li>';
+                        $('#wrap').append('<ul>' + name + gender + part + '</ul>');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+

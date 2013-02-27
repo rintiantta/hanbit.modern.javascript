@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" />
+    <style>
+        .box { padding: 5px; }
+        .box p { margin: 0px; padding: 5px; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 함수를 선언합니다.
+            function reset() {
+                var resetClass = 'ui-corner-all ui-widget-content box';
+                $('#output').attr('class', resetClass);
+            }
+            reset();
+
+            // jQuery UI Button 플러그인을 사용합니다.
+            $('#radio').buttonset();
+                
+            // 이벤트를 연결합니다.
+            $('button').click(function () { reset(); });
+            $('#radio > input').change(function () {
+                reset();
+                $('#output').addClass('ui-state-' + $(this).val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="radio">
+        <input type="radio" name="theme" id="highlight" value="highlight"/>
+        <label for="highlight">highlight</label>
+        <input type="radio" name="theme" id="error" value="error"/>
+        <label for="error">error</label>
+        <input type="radio" name="theme" id="error_text" value="error-text"/>
+        <label for="error_text">error_text</label>
+        <input type="radio" name="theme" id="disabled" value="disabled"/>
+        <label for="disabled">disabled</label>
+        <button>RESET</button>
+    </div>
+    <div id="output">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus auctor augue, in molestie dui vehicula in. Duis fringilla convallis sem ac dignissim. Vestibulum a eros augue. Phasellus at turpis ut est mollis ultrices. Praesent vulputate mattis faucibus. Mauris ut ultrices felis. Donec a massa in tellus ultricies auctor. Nunc eu fringilla elit. Vivamus mi magna, rhoncus quis cursus a, vehicula sit amet orci. Proin nisi tellus, venenatis eget accumsan et, feugiat nec nulla. Fusce id purus lectus. Praesent a vestibulum purus. Phasellus ac felis sed dolor vehicula congue at nec justo. Cras porttitor lobortis dictum. Integer ac risus neque, scelerisque fermentum lacus. Duis tincidunt elit quis mi porta eget venenatis libero fermentum.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="fancybox/jquery.fancybox-1.3.4.css"/>
+    <style>
+        
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="fancybox/jquery.easing-1.3.pack.js"></script>
+    <script src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a').fancybox();
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery FancyBox</h1>
+    <a rel="fancybox" href="#dialog">Dialog with FancyBox</a>
+    <!-- 다이얼로그 -->
+    <div id="dialogs" style="display:none;">
+        <div id="dialog">
+            <h1>Hello FancyBox..!</h1>
+            <p>Lorem ipsum dolor sit amet,</p>
+        </div>
+    </div>
+</body>
+</html>

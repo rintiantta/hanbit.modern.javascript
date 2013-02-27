@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        jQuery.fn.pivot = function (options) {
+
+        };
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pivot_slider').pivot({
+                width: 700,
+                height: 450
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="pivot_slider">
+        <div>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <img src="Desert.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div>
+            <h1>Fusce eleifend</h1>
+            <img src="Hydrangeas.jpg" />
+            <p>Fusce eleifend, massa at elementum ultrices.</p>
+        </div>
+        <div>
+            <h1>Donec venenatis mattis elit.</h1>
+            <img src="Jellyfish.jpg" />
+            <p>Donec venenatis mattis elit. Etiam suscipit.</p>
+        </div>
+        <div>
+            <h1>Phasellus sagittis quam mi.</h1>
+            <img src="Koala.jpg" />
+            <p>Phasellus sagittis quam mi. Ut non neque a tellus laoreet.</p>
+        </div>
+    </div>
+</body>
+</html>

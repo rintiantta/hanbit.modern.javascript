@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        img { width:100%; }
+        body{ width:700px; margin:0px auto; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        jQuery.fn.pivot = function (options) {
+            // 변수를 선언합니다.
+            var $target = $(this);
+            var $items = $target.children();
+            var $container = $target.wrap('<div></div>').parent();
+            var option = { width: 500, height: 450 };
+
+            // 옵션을 처리합니다.
+            $.extend(option, options);
+
+            // 스타일을 지정합니다.
+            $target.css({
+                width: $items.length * option.width,
+                height: option.height,
+                position: 'absolute'
+            });
+            $items.css({
+                float: 'left',
+                width: option.width, height: option.height
+            });
+            $container.css({
+                //overflow: 'hidden', 
+                position: 'relative',
+                width: option.width, height: option.height
+            });
+
+            // 이벤트를 연결합니다.
+            var originalLeft = 0;
+            var oldLeft = 0;
+            var nowPosition = 0;
+            var isDown = false;
+            $target.bind('mousedown', function (event) {
+                oldLeft = originalLeft = event.clientX;
+                isDown = true;
+                event.preventDefault();
+            });
+            $target.bind('mousemove', function (event) {
+                if (isDown) {
+                    // 변수를 선언합니다.
+                    var distance = oldLeft - event.clientX;
+                    oldLeft = event.clientX;
+                    // 움직입니다.
+                    $target.animate({ left: '-=' + distance }, 0);
+                    $target.stop(true);
+                }
+                event.preventDefault();
+            });
+            $target.bind('mouseup', function (event) {
+                // 내부 함수를 선언합니다.
+                function movePosition(direction) {
+                    // 위치를 설정합니다.
+                    var changePosition = nowPosition + direction;
+                    if (0 <= changePosition && changePosition < $items.length) {
+                        nowPosition = changePosition
+                    }
+                }
+                // 요소의 1/4 이상 드래그를 했을 경우 피벗합니다.
+                if (originalLeft - event.clientX > option.width / 4) {
+                    movePosition(+1);
+                } else if (originalLeft - event.clientX < -option.width / 4) {
+                    movePosition(-1);
+                }
+                // 이동합니다.
+                $target.animate({ 'left': -nowPosition * option.width }, 'fast');
+                isDown = false;
+                event.preventDefault();
+            });
+        };
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pivot_slider').pivot({
+                width: 700,
+                height: 800
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Custom Pivot Plugins</h1>
+    <hr />
+    <div id="pivot_slider">
+        <div>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <img src="Desert.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent accumsan auctor consectetur. Fusce posuere, tellus nec bibendum tincidunt, ante odio scelerisque ipsum, sit amet varius dolor ipsum ac arcu. Quisque tortor quam, molestie non vestibulum nec, fermentum vitae nulla. Etiam vitae nunc nulla, et faucibus elit. Nulla id euismod nibh. Mauris lorem elit, consequat at laoreet sit amet, tempus at nisi. Phasellus lobortis felis ac leo tincidunt aliquet pretium nisl lacinia. Fusce dictum mattis lorem eu semper. Nam sit amet bibendum enim. Ut ultrices tristique mi, id malesuada tellus cursus eu. In risus nisl, tempus ac imperdiet et, hendrerit ut nibh. Etiam fringilla, erat eget cursus posuere, erat dui varius justo, ut porta velit dui eu massa. Aliquam erat volutpat. Mauris cursus mattis metus non sagittis.</p>
+        </div>
+        <div>
+            <h1>Fusce eleifend</h1>
+            <img src="Hydrangeas.jpg" />
+            <p>Fusce molestie auctor ornare. Nulla et justo sed diam lacinia sodales. Praesent quis sapien lacus, vitae ultrices tellus. Sed ut vestibulum ante. Duis vestibulum dolor erat, eget vulputate eros. Proin egestas nisi vitae sapien pulvinar ac consectetur felis cursus. Phasellus ornare gravida erat in lacinia. Sed suscipit tellus at metus gravida sit amet bibendum ligula sodales. Fusce ligula mi, interdum eget euismod congue, luctus non tortor. Vestibulum at nisi metus, facilisis tincidunt risus. In elit nulla, adipiscing ac placerat euismod, luctus eget turpis. Integer pulvinar volutpat erat. Duis sit amet arcu venenatis nibh malesuada placerat ut at felis. Nam lacinia mattis fermentum.</p>
+        </div>
+        <div>
+            <h1>Donec venenatis mattis elit.</h1>
+            <img src="Jellyfish.jpg" />
+            <p>Nullam sed nisl id mauris vulputate scelerisque quis nec sem. Cras volutpat mi sit amet leo sollicitudin id porttitor quam porta. Mauris placerat, neque et pharetra volutpat, massa nulla volutpat tortor, sed convallis nisi dolor vitae ipsum. Etiam eget risus eget lacus elementum tempus eget eget enim. Mauris in metus sit amet mi ullamcorper mollis. Pellentesque a nisl sit amet nibh ultrices condimentum eget quis urna. Proin scelerisque enim non ante euismod euismod. Nulla leo odio, elementum vitae adipiscing vitae, varius a enim. Ut rutrum convallis convallis. Duis vehicula eleifend ligula, vitae elementum quam semper vel. Aliquam euismod ante semper tellus semper vulputate. Duis lobortis, nisi vitae auctor lobortis, eros mauris sollicitudin orci, nec eleifend sem urna a purus. Duis commodo rhoncus magna vel tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        </div>
+        <div>
+            <h1>Phasellus sagittis quam mi.</h1>
+            <img src="Koala.jpg" />
+            <p>Nunc ut nibh at nisl varius pharetra eu mattis lectus. Curabitur pharetra interdum eros eget ornare. Aenean et justo dui. Nam dolor ante, porttitor dictum cursus a, euismod et mauris. Quisque arcu nisi, mattis eget mattis eu, egestas et sapien. Phasellus in magna lectus. Integer vitae mi tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <address>RintIanTta. Custom Pivot Plugins</address>
+</body>
+</html>

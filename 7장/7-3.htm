@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var primitiveNumber = 273;
+        var objectNumber = new Number(273);
+
+        // 메서드를 추가합니다.
+        Number.prototype.method = function () {
+            return 'Method on Prototype';
+        };
+
+        // 출력합니다.
+        var output = '';
+        output += primitiveNumber.method() + '\n';
+        output += objectNumber.method() + '\n';
+        alert(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

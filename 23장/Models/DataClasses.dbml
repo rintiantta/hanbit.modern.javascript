@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AdventureWorksLT2008_Data" Class="AdventureWorksDB" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\AdventureWorksLT2008_Data.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AdventureWorksLT2008_DataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="SalesLT.Product" Member="Product">
+    <Type Name="Product">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductNumber" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="StandardCost" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ListPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="ProductCategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductModelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SellStartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SellEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DiscontinuedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThumbNailPhoto" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ThumbnailPhotoFileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
