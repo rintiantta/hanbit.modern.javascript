@@ -78,7 +78,7 @@ if(h <0) { throw '길이는 음수일 수 없습니다.' }
 
 ###Page. 167
 코드 6-37이 잘못 들어갔습니다. 코드 6-37 뒤에 다음 부분이 추가되어야 합니다.
-```javascript
+```html
 <script>
     // 생성자 함수를 선언합니다.
     function Square(length) {
