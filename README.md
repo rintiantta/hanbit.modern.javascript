@@ -30,9 +30,18 @@ jQuery 1.9버전에서 `toggle() 메서드`도 제거되었습니다.
 [jQuery.cycle.js](https://github.com/rintiantta/jquery.cycle.js)
 
 사용 방법은 다음과 같습니다.
+```javascript
+// 기존 toggle() 메서드 사용
+$('h1').toggle(function () { }, function () { });
+```
+```javascript
+// cycle() 메서드 사용
+$('h1').cycle(function () { }, function () { });
+```
 
 * input 태그의 checked 속성
 jQuery 라이브러리 1.9버전 이하에서는 다음과 같이 attr() 메서드를 사용해 체크 상태를 변경할 수 있었습니다.
+
 ```html
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script>
@@ -63,16 +72,6 @@ jQuery 라이브러리 1.9버전 이하에서는 다음과 같이 attr() 메서�
     });
 </script>
 ```
-
-```javascript
-// 기존 toggle() 메서드 사용
-$('h1').toggle(function () { }, function () { });
-```
-```javascript
-// cycle() 메서드 사용
-$('h1').cycle(function () { }, function () { });
-```
-
 ##ECMAScript5 관련 내용
 ECMAScript5 관련 내용은 책에 표기되어 있듯
 HTML5를 지원하는 브라우저에서만 작동합니다.
