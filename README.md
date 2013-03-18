@@ -31,6 +31,39 @@ jQuery 1.9버전에서 `toggle() 메서드`도 제거되었습니다.
 
 사용 방법은 다음과 같습니다.
 
+* input 태그의 checked 속성
+jQuery 라이브러리 1.9버전 이하에서는 다음과 같이 attr() 메서드를 사용해 체크 상태를 변경할 수 있었습니다.
+```html
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#all_check').change(function () {
+            if (this.checked) {
+                $('#check_item').find('input').attr('checked', true);
+            } else {
+                $('#check_item').find('input').attr('checked', false);
+            }
+        });
+    });
+</script>
+```
+하지만 jQuery 라이브러리 1.9버전부터는 반드시 prop() 메서드를 사용해서만 체크 상태를 변경할 수 있습니다.
+음... 뭔가 이상하게 바뀌어버렸엉... 전혀 예상하지 못한 부분이 바뀌는군요....
+```html
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#all_check').change(function () {
+            if (this.checked) {
+                $('#check_item').find('input').prop('checked', true);
+            } else {
+                $('#check_item').find('input').prop('checked', false);
+            }
+        });
+    });
+</script>
+```
+
 ```javascript
 // 기존 toggle() 메서드 사용
 $('h1').toggle(function () { }, function () { });
