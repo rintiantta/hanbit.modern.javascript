@@ -121,6 +121,17 @@ if(h <0) { throw '길이는 음수일 수 없습니다.' }
 </script>
 ```
 
+###Page. 168 - 안요한님 발견!
+168페이지의 코드 6-38의 
+```javascript
+Square.prototype = Rectangle.prototype; // (168페이지 마지막 줄)을
+```
+다음 코드로 변경합니다.
+```javascript
+Square.prototype = Rectangle.prototype;
+Square.prototype.constructor = Square;
+```
+
 ###Page. 171
 위에서 두 번째 줄에 코드 6-1이라고 쓰여있는데
 코드 6-1이 아니라 코드 6-38입니다. ㅠㅁㅜ
